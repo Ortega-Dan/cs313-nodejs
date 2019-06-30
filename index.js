@@ -3,7 +3,12 @@ const path = require('path')
 const PORT = process.env.PORT || 5000
 
 express()
+    // This is the way to serve static files in the /staticow path ...
+    //  but the files are within '/home/danort/Documents'
     // .use('/staticow', express.static('/home/danort/Documents'))
+    // ...
+    // And this is the way to serve static files to the root (/) path of the site and files will be ...
+    // in the public dir of the currect project
     .use(express.static(path.join(__dirname, 'public')))
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
