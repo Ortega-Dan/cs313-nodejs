@@ -1,39 +1,27 @@
-# node-js-getting-started
+# cs313-nodejs
+NodeJS Getting Started Training Project
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+lEARN *Really* cOOL & nEEDED sTUFF FROM https://nodeschool.io/
 
-This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+This Project has the contents for solving the challenges of learnyounode npm module
+(install and run this tool by doing:
+$ sudo npm install learnyounode -g
+$ learnyounode
+and following the instructions of each challenge
+)
 
-## Running Locally
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
+# ALLWAYS TO KEEP ... VERY VERY BASIC GOOD PRACTICES
 
-```sh
-$ git clone https://github.com/heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
+Allways start your projects with:
+$ npm init
+(from the project root directory)
+
+and allways make sure your settings are like this: 
+$ npm config set save=true
+$ npm config set save-exact=true
+(becasue that way your dependencies will always be installed locally, will always be added to the package.json and will always be kept with the installed version)
+(this settigs are saved in the ~/.npmrc file for you to verify [and are installed per user, in case you want to install them globally you can do for example $ npm config set save=true -g .... and those will be saved in /usr/etc/npmrc ])
+
+if you do that you just download your code which should come including your package.json file and whoever wants to get dependencies just need to do:
 $ npm install
-$ npm start
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)

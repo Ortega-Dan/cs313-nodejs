@@ -1,0 +1,12 @@
+{
+  "name": "dancho-learnyounode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "asyncFilteredLS.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dan Ortega",
+  "license": "ISC",
+  "dependencies": {}
+}
