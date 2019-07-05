@@ -27,4 +27,4 @@ if you do that you just download your code which should come including your pack
 $ npm install
 
 ## If you want to have everything in this project or if you want to have url redirection to another JS file you need to have that as a router and used in your index to redirect to it ... like this :
-![howToRedirectToJS](https://raw.githubusercontent.com/Ortega-Dan/node-js-getting-started/master/READMEimages/HowToRouteFromVariousJSfiles.png)
+![howToRedirectToJS](https://raw.githubusercontent.com/Ortega-Dan/cs313-nodejs/master/READMEimages/HowToRouteFromVariousJSfiles.png)
