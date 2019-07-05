@@ -1,4 +1,4 @@
-# cs313-nodejs
+# CS 313-nodejs
 NodeJS Getting Started Training Project
 
 lEARN *Really* cOOL & nEEDED sTUFF FROM https://nodeschool.io/
@@ -11,7 +11,7 @@ and following the instructions of each challenge
 )
 
 
-# ALLWAYS TO KEEP ... VERY VERY BASIC GOOD PRACTICES
+## ALLWAYS TO KEEP ... VERY VERY BASIC GOOD PRACTICES
 
 Allways start your projects with:
 $ npm init
@@ -25,3 +25,6 @@ $ npm config set save-exact=true
 
 if you do that you just download your code which should come including your package.json file and whoever wants to get dependencies just need to do:
 $ npm install
+
+## If you want to have everything in this project or if you want to have url redirection to another JS file you need to have that as a router and used in your index to redirect to it ... like this :
+![hola](https://raw.githubusercontent.com/Ortega-Dan/node-js-getting-started/master/READMEimages/HowToRouteFromVariousJSfiles.png)
