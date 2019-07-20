@@ -7,7 +7,7 @@ function getFammyUsers() {
         memberslist.innerHTML = ""
     }
 
-    var URL = 'fammyServices/fammymembers'
+    var URL = '/week10fammyServices/fammymembers'
     $.get(URL, (data, status) => {
 
 
