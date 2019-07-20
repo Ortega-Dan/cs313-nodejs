@@ -2,6 +2,9 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
+var team10 = require('./routes/team10/team10')
+
+
 express()
     // This is the way to serve static files in the /staticow path ...
     //  but the files are within '/home/danort/Documents'
@@ -10,33 +13,13 @@ express()
     // And this is the way to serve static files to the root (/) path of the site and files will be ...
     // in the public dir of the currect project
     .use(express.static(path.join(__dirname, 'public')))
+    .use('/team10', team10)
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
     // when the user goes to the root redirect to form.ejs
     .get('/', (req, res) => {
 
-        // FIRST CONNECTING TO POSTGRESQL DB AT HEROKU
-        const connectionString = process.env.DATABASE_URL
 
-        const { Pool } = require('pg')
-
-        const pool = new Pool({ connectionString: connectionString })
-
-        var sql = "select * from firsttable"
-
-        pool.query(sql, function(err, result) {
-                // If an error occurred...
-                if (err) {
-                    console.log("Error in query: ")
-                    console.log(err);
-                }
-
-                // Log this to the console for debugging purposes.
-                console.log("Back from DB with result:")
-                console.log(result.rows[0]);
-
-            })
-            // END OF POSTGRESQL QUERY TEST
 
         res.render('pages/form')
     })
