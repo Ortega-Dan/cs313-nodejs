@@ -1,0 +1,27 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    margin: auto;
+    max-width: 700px;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+}
+
+#updatebutton {
+    margin: auto;
+}
+
+span.errormsg {
+    color: #f00;
+    font-size: 1.2em;
+}
+
+span.infomsg {
+    color: #00f;
+    font-size: 1.2em;
+}
