@@ -6,9 +6,19 @@ function clicked() {
 
 function getFammyUsers() {
 
-    var URL = 'team10/person/DANPAPA'
+    var URL = 'fammyServices/fammymembers'
     $.get(URL, (data, status) => {
         console.log(data, status)
+
+        var memberslist = document.getElementById('memberslist')
+
+
+        var tr = document.createElement('tr')
+        tr.innerHTML = "<td>Somethingo</td><td><a class='btn btn-outline-primary' href='#' role='button'><i class='fas fa-paper-plane' aria-hidden='true'></i></a></td>"
+
+        memberslist.appendChild(tr)
+        $('#fammymembers').show()
     })
+
 
 }

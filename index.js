@@ -6,6 +6,9 @@ const PORT = process.env.PORT || 5000
 var team10 = require('./routes/team10/team10')
 
 
+// Project Additional Routers
+var fammyServices = require('./routes/fammyservices')
+
 express()
     // This is the way to serve static files in the /staticow path ...
     //  but the files are within '/home/danort/Documents'
@@ -45,9 +48,10 @@ express()
             // doing res.render('pages/domath', res.query)
     })
 
+
 // FROM HERE ON WILL HAVE THE CODE FOR THE 2ND HALF NODEJS PROJECT
 .get('/', (req, res) => {
     res.render('fammyindex')
-})
+}).use('/fammyServices', fammyServices)
 
 .listen(PORT, () => console.log(`Listening on ${PORT}`))

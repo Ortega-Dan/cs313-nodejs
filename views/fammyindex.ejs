@@ -28,9 +28,23 @@
     </header>
     <main>
 
+        <br>
+        <br>
         <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="button" onclick="getFammyUsers()">
-                See Fammy Members
-            </button>
+            See Fammy Members
+        </button>
+
+        <table id="fammymembers" class="table table-hover" style="display: none">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Send Message</th>
+                </tr>
+            </thead>
+            <tbody id="memberslist">
+                <!--This is automatically filled with the getFammyUsers script-->
+            </tbody>
+        </table>
 
     </main>
 
