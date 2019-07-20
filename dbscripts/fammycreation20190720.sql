@@ -11,7 +11,17 @@ create table fammyuser
 create unique index fammyuser_username_uindex
 	on fammyuser (username);
 
+insert into fammyuser (username, profilepicpath)
+values ('Dan Ortega',null);
 
+insert into fammyuser (username, profilepicpath)
+values ('Jenn Bohorquez',null);
+
+insert into fammyuser (username, profilepicpath)
+values ('Amie Ortega',null);
+
+insert into fammyuser (username, profilepicpath)
+values ('Annie Ortega',null);
 
 /* just for testing table !!
 create table firsttable
