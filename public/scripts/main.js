@@ -6,7 +6,6 @@ function clicked() {
 
 function getFammyUsers() {
 
-    // var URL = 'http://localhost:5000/team10/person/DANPAPA'
     var URL = 'team10/person/DANPAPA'
     $.get(URL, (data, status) => {
         console.log(data, status)
