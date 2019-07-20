@@ -1,0 +1,9 @@
+// Place your settings in this file to overwrite the default settings
+{
+    // Configure file associations to languages (e.g. "*.extension": "html"). 
+    // These have precedence over the default associations of the languages installed.
+    "files.associations": {
+        // This will enable html vscode autocompletion in EJS files
+        "*.ejs": "html"
+    }
+}
