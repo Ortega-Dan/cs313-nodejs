@@ -2,6 +2,8 @@ var express = require('express')
 var router = express.Router()
 
 // middleware that is specific to this router
+router.use(express.json())
+router.use(express.urlencoded())
 router.use(function timeLog(req, res, next) {
         console.log('Time: ', Date.now())
         next()
@@ -22,7 +24,7 @@ router.get('/fammymembers', function something(req, res) {
 
     // console.log(req.params.id)
 
-    var sql = "select username from fammyuser"
+    var sql = "select keyid, username from fammyuser"
 
     pool.query(sql, function(err, result) {
             // If an error occurred...
@@ -35,14 +37,18 @@ router.get('/fammymembers', function something(req, res) {
 
             // Log this to the console for debugging purposes.
             console.log("Back from DB with result:")
-            console.log(result.rows[0]);
+            console.log(result.rows);
 
             res.send(result.rows)
 
         })
         // END OF POSTGRESQL QUERY TEST
+})
 
-
+router.post('/message', function something(req, res) {
+    console.log('POST SERVICE CALLED')
+    console.log(req.body.someparamo)
+    res.send('RESPONSE RESPONSES')
 })
 
 module.exports = router
