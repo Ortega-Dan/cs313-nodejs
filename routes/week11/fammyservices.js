@@ -2,8 +2,9 @@ var express = require('express')
 var router = express.Router()
 
 // middleware that is specific to this router
+
+// RECEIVE DATA AS JSON
 router.use(express.json())
-router.use(express.urlencoded())
 router.use(function timeLog(req, res, next) {
         console.log('Time: ', Date.now())
         next()
@@ -46,8 +47,11 @@ router.get('/fammymembers', function something(req, res) {
 })
 
 router.post('/message', function something(req, res) {
+
     console.log('POST SERVICE CALLED')
-    console.log(req.body.someparamo)
+
+    console.log(req.body.message)
+
     res.send('RESPONSE RESPONSES')
 })
 

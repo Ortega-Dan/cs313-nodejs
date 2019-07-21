@@ -18,8 +18,7 @@ function sendMessage() {
 
     var URL = "/week11fammyServices/message"
 
-    var DATA = { someparamo: "test" }
-
+    var DATA = { message: $('#message').val() }
 
     $.ajax({
         url: URL,
