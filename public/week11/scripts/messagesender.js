@@ -25,6 +25,7 @@ function sendMessage() {
         type: "POST",
         data: JSON.stringify(DATA),
         contentType: "application/json; charset=utf-8",
+        // dataType: "json",
         success: function(data, status) {
             console.log(data)
         }

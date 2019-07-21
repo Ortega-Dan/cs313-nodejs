@@ -52,7 +52,7 @@ router.post('/message', function something(req, res) {
 
     console.log(req.body.message)
 
-    res.send('RESPONSE RESPONSES')
+    res.send("Something weird")
 })
 
 module.exports = router
