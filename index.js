@@ -8,6 +8,7 @@ var team10 = require('./routes/team10/team10')
 
 // Project Additional Routers
 var week10fammyServices = require('./routes/week10/fammyservices')
+var week11fammyServices = require('./routes/week11/fammyservices')
 
 express()
     // This is the way to serve static files in the /staticow path ...
@@ -52,5 +53,6 @@ express()
 // FROM HERE ON WILL HAVE THE CODE FOR THE 2ND HALF NODEJS PROJECT
 // Up to week 10
 .use('/week10fammyServices', week10fammyServices)
+    .use('/week11fammyServices', week11fammyServices)
 
 .listen(PORT, () => console.log(`Listening on ${PORT}`))
