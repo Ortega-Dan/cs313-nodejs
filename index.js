@@ -1,6 +1,6 @@
 const express = require('express')
-const path = require('path')
 const PORT = process.env.PORT || 5000
+
 
 // Team assignments imports
 var team10 = require('./routes/team10/team10')
@@ -18,8 +18,8 @@ express()
     // ...
     // And this is the way to serve static files to the root (/) path of the site and files will be ...
     // in the public dir of the currect project
-    .use(express.static(path.join(__dirname, 'public')))
-    .set('views', path.join(__dirname, 'views'))
+    .use(express.static('public'))
+    .set('views', 'views')
     .set('view engine', 'ejs')
 
 // Team assingments from here
