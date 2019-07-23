@@ -5,19 +5,26 @@ function login() {
     var params = {
         username: username,
         password: password
-    };
+    }
 
-    $.post("/login", params, function(result) {
-        if (result && result.success) {
-            $("#status").text("Successfully logged in.");
-        } else {
-            $("#status").text("Error logging in.");
+    $.ajax({
+        type: "POST",
+        url: "/team12/login",
+        data: JSON.stringify(params),
+        contentType: "application/json",
+        success: function(result) {
+            if (result && result.success) {
+                $("#status").text("Successfully logged in.");
+            } else {
+                $("#status").text("Error logging in.");
+            }
         }
-    });
+    })
+
 }
 
 function logout() {
-    $.post("/logout", function(result) {
+    $.post("/team12/logout", function(result) {
         if (result && result.success) {
             $("#status").text("Successfully logged out.");
         } else {
@@ -27,7 +34,7 @@ function logout() {
 }
 
 function getServerTime() {
-    $.get("/getServerTime", function(result) {
+    $.get("/team12/getServerTime", function(result) {
         if (result && result.success) {
             $("#status").text("Server time: " + result.time);
         } else {

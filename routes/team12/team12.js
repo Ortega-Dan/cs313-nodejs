@@ -1,6 +1,10 @@
 var express = require('express')
 var router = express.Router()
 
+// RECEIVE DATA AS JSON to use it here in the req.body object
+router.use(express.json())
+
+
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
         console.log('Team Week 12 - Resquested at Time: ', Date.now())
@@ -8,41 +12,24 @@ router.use(function timeLog(req, res, next) {
     })
     // define the home page route
 router.get('/', function(req, res) {
-        res.send('Team10 home page')
-    })
-    /*
-    router.get('/person/:id', function something(req, res) {
+    res.send('Team12 root')
+})
 
-        // FIRST CONNECTING TO POSTGRESQL DB AT HEROKU
-        const connectionString = process.env.DATABASE_URL
+router.post('/login', (req, res) => {
 
-        const { Pool } = require('pg')
+    let uname = req.body.username
+    let pword = req.body.password
 
-        const pool = new Pool({ connectionString: connectionString })
-
-        console.log(req.params.id)
-
-        var sql = "select * from team10.person where id = '" + req.params.id + "'"
-
-        pool.query(sql, function(err, result) {
-                // If an error occurred...
-                if (err) {
-                    console.log("Error in query: ")
-                    console.log(err);
-
-                    res.send("Error retrieving from DB")
-                }
-
-                // Log this to the console for debugging purposes.
-                console.log("Back from DB with result:")
-                console.log(result.rows[0]);
-
-                res.send(result.rows[0])
-
-            })
-            // END OF POSTGRESQL QUERY TEST
+    let response = false
 
 
-    })*/
+    console.log('Received...\nUser: ' + uname)
+    console.log('Password: ' + pword)
+
+    if (uname === "admin" && pword === "password")
+        response = true
+
+    res.send({ success: response })
+})
 
 module.exports = router
