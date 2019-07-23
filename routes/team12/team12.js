@@ -43,4 +43,21 @@ router.post('/login', (req, res) => {
     res.send({ success: response })
 })
 
+router.post('/logout', (req, res) => {
+
+
+    let response = false
+
+    if (req.session.user) {
+        req.session.destroy()
+        response = true
+    }
+
+    res.send({ success: response })
+})
+
+
+
+
+
 module.exports = router
