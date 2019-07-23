@@ -24,8 +24,7 @@ function sendMessage() {
         url: URL,
         type: "POST",
         data: JSON.stringify(DATA),
-        contentType: "application/json; charset=utf-8",
-        // dataType: "json",
+        contentType: "application/json",
         success: function(data, status) {
             console.log("Received answer was: " + data)
         }

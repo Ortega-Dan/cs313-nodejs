@@ -3,7 +3,7 @@ var router = express.Router()
 
 // middleware that is specific to this router
 
-// RECEIVE DATA AS JSON
+// RECEIVE DATA AS JSON to use it here in the req.body object
 router.use(express.json())
 
 // Middleware Time Logger for requests
