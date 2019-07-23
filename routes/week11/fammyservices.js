@@ -5,8 +5,10 @@ var router = express.Router()
 
 // RECEIVE DATA AS JSON
 router.use(express.json())
+
+// Middleware Time Logger for requests
 router.use(function timeLog(req, res, next) {
-        console.log('Time: ', Date.now())
+        console.log('WEEK 11 FammyServices Middleware - Resquested at Time: ', Date.now())
         next()
     })
     // define the home page route
@@ -14,7 +16,7 @@ router.get('/', function(req, res) {
     res.send('FammyServices Root')
 })
 
-router.get('/fammymembers', function something(req, res) {
+router.get('/fammymembers', function queryMembers(req, res) {
 
     // FIRST CONNECTING TO POSTGRESQL DB AT HEROKU
     const connectionString = process.env.DATABASE_URL
@@ -48,11 +50,11 @@ router.get('/fammymembers', function something(req, res) {
 
 router.post('/message', function something(req, res) {
 
-    console.log('POST SERVICE CALLED')
+    console.log('Service Called by POST')
 
-    console.log(req.body.message)
+    console.log("The received message is: " + req.body.message)
 
-    res.send("Something weird")
+    res.send("Server Response from Super Server")
 })
 
 module.exports = router

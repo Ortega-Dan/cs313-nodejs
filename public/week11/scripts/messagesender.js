@@ -2,7 +2,7 @@ function run() {
 
     var url = window.location.search
     var user = url.split('?')[1].split('&')[1].split('=')[1].replace('%20', ' ')
-    console.log(user)
+    console.log("Message Sender ready for: " + user)
 
 
     $('#sender').text('Send to ' + user)
@@ -13,7 +13,7 @@ window.onload = run
 
 function sendMessage() {
 
-    console.log('sENDING MESSAGE')
+    console.log('Sending Message to Server')
 
 
     var URL = "/week11fammyServices/message"
@@ -27,7 +27,7 @@ function sendMessage() {
         contentType: "application/json; charset=utf-8",
         // dataType: "json",
         success: function(data, status) {
-            console.log(data)
+            console.log("Received answer was: " + data)
         }
     })
 

@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 5000
 
 // Team assignments imports
 var team10 = require('./routes/team10/team10')
+var team12 = require('./routes/team12/team12')
 
 
 // Project Additional Routers
@@ -22,8 +23,10 @@ express()
     .set('view engine', 'ejs')
 
 // Team assingments from here
-.use('/team10', team10) // Routing to team 10 activity
-    .get('/team9form', (req, res) => {
+.use('/team10', team10) // Routing to team week 10 activity
+    .use('/team12', team12) // Routing to team week 12 activity
+
+.get('/team9form', (req, res) => {
         res.render('pages/zteam9form')
     })
     // when the url goes to /math do the math and then go to domath.ejs 
