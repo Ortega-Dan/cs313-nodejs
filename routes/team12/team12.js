@@ -17,7 +17,7 @@ router.use(express.json())
 
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
-        console.log('Team Week 12 Middleware - Accessed at Time: ', Date.now())
+        console.log('Team Week 12 Middleware - Accessed at Time: ', new Date)
         console.log('Requesting ' + req.url)
         next()
     })
