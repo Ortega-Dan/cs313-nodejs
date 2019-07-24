@@ -17,6 +17,7 @@ router.use(express.json())
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
         console.log('Team Week 12 Middleware - Accessed at Time: ', Date.now())
+        console.log('Requesting ' + req.url)
         next()
     })
     // define the home page route
@@ -56,8 +57,21 @@ router.post('/logout', (req, res) => {
     res.send({ success: response })
 })
 
+router.get('/getServerTime', verifyLogin, (req, res) => {
+
+    response = false
 
 
+    response = true
+    res.send({ success: response, time: new Date() })
+})
 
+function verifyLogin(req, res, next) {
+    if (req.session.user) next()
+    else {
+        res.status(401)
+        res.send({ success: false, message: "Unauthorized" })
+    }
+}
 
 module.exports = router

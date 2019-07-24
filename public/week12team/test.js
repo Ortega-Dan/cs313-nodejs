@@ -34,7 +34,7 @@ function logout() {
 }
 
 function getServerTime() {
-    $.get("/team12/getServerTime", function(result) {
+    $.get("/team12/getServerTime", function(result, status) {
         if (result && result.success) {
             $("#status").text("Server time: " + result.time);
         } else {
