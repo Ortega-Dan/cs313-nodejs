@@ -8,8 +8,8 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/index.js",
-            "console": "externalTerminal"
+            "program": "${workspaceFolder}/index.js"
+            // , "console": "externalTerminal"
         }
     ]
 }
