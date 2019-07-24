@@ -2,6 +2,7 @@ var express = require('express')
 var router = express.Router()
 
 var session = require('express-session')
+const bcrypt = require('bcrypt');
 
 
 router.use(session({
@@ -34,7 +35,8 @@ router.post('/login', (req, res) => {
 
 
     console.log('Received...\nUser: ' + uname)
-    console.log('Password: ' + pword)
+        // console.log('Password: ' + pword)
+    hashThePass(pword)
 
     if (uname === "admin" && pword === "password") {
         response = true
@@ -72,6 +74,13 @@ function verifyLogin(req, res, next) {
         res.status(401)
         res.send({ success: false, message: "Unauthorized" })
     }
+}
+
+function hashThePass(pword) {
+    console.log(pword)
+    let encripted = bcrypt.hashSync(pword, 10)
+    console.log(encripted)
+    console.log(bcrypt.compareSync(pword, encripted))
 }
 
 module.exports = router
